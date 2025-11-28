@@ -7,10 +7,24 @@
     "text": "About this site"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "wwtp_linking_homepage",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "objectID": "index.html#sample-stations",
+    "href": "index.html#sample-stations",
+    "title": "A multilayered network reveals the centrality of newly discovered Nucleocytoviricota in wastewater treatment plant communities",
+    "section": "Sample Stations",
+    "text": "Sample Stations\nBelow is a rendered map of all sampling stations of waste water treatment plants used in this study. The color of the pin indicates if Nucleocytoviricota (NCV) were identified (green = NCV identified, brown = nothing found).\n\n\n\n\n\n\nNCVs = Nucleocytoviricota, PLV = Polinton-like viruses, VPHs = Virophages."
+  },
+  {
+    "objectID": "index.html#network-clusters",
+    "href": "index.html#network-clusters",
+    "title": "A multilayered network reveals the centrality of newly discovered Nucleocytoviricota in wastewater treatment plant communities",
+    "section": "Network Clusters",
+    "text": "Network Clusters\nSelect a NCV/VPH/PLV-centered network cluster from the menu below to explore the data interactively.\nSelect cluster plot:  – choose a plot – AalW_tig00083928-10-131450_plv_interactive.html Aved_1_interactive.html Aved_tig00303955-10-54120_vph_interactive.html Bjer_1_interactive.html Bjer_2_3_interactive.html Bjer_7_interactive.html Bjer_tig00027726-10-154320_plv_interactive.html Damh_1_2_interactive.html Damh_3_interactive.html Damh_4_interactive.html Damh_tig00014446-10-220150_vph_interactive.html Damh_tig00018526-10-141480_vph_interactive.html Damh_tig00046628-10-92530_vph_interactive.html EsbE_1_2_3_4_6_interactive.html EsbW_1_interactive.html Fred_1_A_interactive.html Fred_1_B_interactive.html Fred_11_interactive.html Fred_2_3_interactive.html Fred_4_interactive.html Fred_8_interactive.html Fred_tig00089364-10-137080_vph_interactive.html Hade_1_interactive.html Hade_5_interactive.html Hade_tig00086668-10-71420_vph_interactive.html Hirt_2_interactive.html Hjor_1_interactive.html Hjor_2_3_4_6_interactive.html Hjor_5_8_9_interactive.html Lyne_1_interactive.html Lyne_10_interactive.html Lyne_11_interactive.html Lyne_3_interactive.html Lyne_5_interactive.html Lyne_8_interactive.html Lyne_tig00033829-10-240680_vph_interactive.html Lyne_tig00044463-10-176290_vph_interactive.html Lyne_tig00046032-10-146580_plv_interactive.html Mari_1_3_interactive.html Mari_2_5_interactive.html Mari_tig00039850-10-191400_plv_interactive.html OdNE_1_interactive.html OdNW_1_7_interactive.html OdNW_2_10_11_interactive.html OdNW_3_4_interactive.html OdNW_8_interactive.html Rand_1_2_interactive.html Rand_3_interactive.html Rand_tig00054083-10-84480_plv_interactive.html Ribe_tig00030249-10-170680_plv_interactive.html Skiv_1_4_interactive.html Skiv_3_6_interactive.html Skiv_7_interactive.html test.html Vibo_2_3_4_interactive.html Vibo_tig00019442-10-136670_plv_interactive.html Viby_1_2_3_4_interactive.html"
+  },
+  {
+    "objectID": "index.html#reference-and-contact",
+    "href": "index.html#reference-and-contact",
+    "title": "A multilayered network reveals the centrality of newly discovered Nucleocytoviricota in wastewater treatment plant communities",
+    "section": "Reference and Contact",
+    "text": "Reference and Contact\nThis work has been published and can be cited under: TBA.\nEmail: dominik.luecking@univie.ac.at, bluesky: @dominikluecking.bsky.social"
   }
 ]

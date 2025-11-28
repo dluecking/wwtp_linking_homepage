@@ -1,7 +1,160 @@
 ---
-title: "wwtp_linking_homepage"
+title: "A multilayered network reveals the centrality of newly discovered Nucleocytoviricota in wastewater treatment plant communities"
 ---
+---
+![Graphical Abstract](img/Graphical Abstract.jpg){fig-align="center"}
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Sample Stations
+Below is a rendered map of all sampling stations of waste water treatment plants used in this study. The color of the pin indicates if *Nucleocytoviricota* (NCV) were identified (**green** = NCV identified, **brown** = nothing found).
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+suppressPackageStartupMessages(library(leaflet))
+suppressPackageStartupMessages(library(data.table))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(  library(stringr))
+
+invisible(data_wwtp <- readxl::read_excel("data/wwtp_locations.xlsx"))
+den_lat <- 10.153119 #You can adjust the center by changing this val
+den_lon <- 56.12879 #You can adjust the center by changing this val
+denmark_geojson <- readLines("data/denmark-detailed-boundary_896.geojson") %>% paste(collapse = "")
+
+
+# read vph data -----------------------------------------------------------
+vph_df <- fread("data/vph_data.csv")
+
+# read plv data -----------------------------------------------------------
+plv_df <- fread("data/plv_data.csv")
+
+# read gv_df --------------------------------------------------------------
+
+gv_df <- fread("data/GV Genome Overview - Final GVs overview.csv") %>% 
+  select(sample, completeness)
+
+
+sample_df <- fread("data/sample_info.csv") %>% 
+  mutate(code = str_remove(sample, "\\_.*$"))
+
+
+# add info to data_wwtp ---------------------------------------------------
+
+data_wwtp$label <- ""
+for(i in 1:nrow(data_wwtp)){
+  tmp_df <- gv_df[sample == data_wwtp$code[i]]
+  
+  if(nrow(tmp_df) < 1){
+    data_wwtp$label[i] <- "No NCVs identified."
+    next
+  }
+  
+  N_COMPLETE <- tmp_df %>% 
+    filter(completeness == "complete") %>% 
+    nrow()
+  N_TOTAL <- tmp_df %>% 
+    nrow()
+  label_string <- paste0(N_TOTAL, " (", N_COMPLETE, " complete)")
+
+  
+  data_wwtp$label[i] <- label_string
+}
+
+# add sample info
+data_wwtp$sample_total_contigs <- sample_df$contigs[match(data_wwtp$code, sample_df$code)]
+
+# add plv vph and mge info ------------------------------------------------------------------
+
+data_wwtp$vph <- 0
+data_wwtp$plv <- 0
+
+for(i in 1:nrow(data_wwtp)){
+  data_wwtp$vph[i] <- vph_df %>% 
+    filter(sample == data_wwtp$code[i]) %>% 
+    nrow()
+  data_wwtp$plv[i] <- plv_df %>% 
+    filter(sample == data_wwtp$code[i]) %>% 
+    nrow()
+}
+
+
+
+# add color to fill circles later
+data_wwtp$color <- if_else(data_wwtp$label == "No NCVs identified.", "#a6611a", "#018571", missing = "lala")
+
+# the map itself
+
+leaflet() %>%
+  setView(lng = den_lat, lat = den_lon, zoom = 7) %>%
+  addMarkers(
+    lng = data_wwtp$longitude,
+    lat = data_wwtp$latitude,
+    label = data_wwtp$code,
+    popup = paste0("<strong>Sample: </strong>", data_wwtp$code, "<br> 
+                   <strong>Number of contigs in sample: </strong>", data_wwtp$sample_total_contigs, "<br> 
+                   <strong>NCVs identified: </strong>", data_wwtp$label, "<br> 
+                   <strong>PLVs identified: </strong>", data_wwtp$plv, "<br>
+                   <strong>VPHs identified: </strong>", data_wwtp$vph, "<br>"),
+    labelOptions = labelOptions(
+      noHide = FALSE,
+      direction = "auto",
+      offset = c(10, -10),
+      textsize = "14px"
+    )
+  ) %>%
+  addProviderTiles("CartoDB.VoyagerNoLabels") %>%
+  addGeoJSON(
+    geojson = denmark_geojson,
+    fillColor = "#DDD78D",
+    weight = 2,
+    color = "black",
+    fillOpacity = 0.1,
+  ) %>%  # Highlight Denmark in blue
+  addCircles(
+    data = data_wwtp,
+    color = data_wwtp$color,
+    fillColor = data_wwtp$color,
+    fillOpacity = 0.5,
+    weight = 15,
+    popup = paste0("<strong>Sample: </strong>", data_wwtp$code, "<br> <strong>Number of contigs in sample: </strong>", data_wwtp$sample_total_contigs, "<br> <strong>GVs identified: </strong>", data_wwtp$label, "<br> <strong>PLVs identified: </strong>", data_wwtp$plv, "<br> <strong>Virophages identified: </strong>", data_wwtp$vph, "<br> <strong>Recombinases (MGEs) identified: </strong>", data_wwtp$mge)
+  )
+
+```
+
+NCVs = Nucleocytoviricota, PLV = Polinton-like viruses, VPHs = Virophages.
+
+## Network Clusters
+Select a NCV/VPH/PLV-centered network cluster from the menu below to explore the data interactively.
+
+<label for="plotSelector"><strong>Select cluster plot:</strong></label>
+<select id="plotSelector">
+  <option value="">-- choose a plot --</option>
+  {{< include options.html >}}
+</select>
+
+<!-- Hidden iframe initially -->
+<iframe id="plotFrame" 
+        style="border:0px solid #ccc; display:none; width:100%; height:600px">
+</iframe>
+
+<script>
+document.getElementById('plotSelector').addEventListener('change', function() {
+    const frame = document.getElementById('plotFrame');
+    const selected = this.value;
+
+    if (selected === "") {
+        frame.style.display = "none";
+        frame.src = "";
+    } else {
+        frame.style.display = "block";
+        frame.src = "cluster_plots/" + selected;
+    }
+});
+</script>
+
+
+## Reference and Contact
+This work has been published and can be cited under:
+TBA.
+
+
+
+Email: dominik.luecking\@univie.ac.at, bluesky: \@dominikluecking.bsky.social
