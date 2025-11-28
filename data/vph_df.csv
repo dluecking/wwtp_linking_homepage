@@ -1,0 +1,16 @@
+contig_ID,public_ID,sample,contig_lengths,GC,genome toplogy,ATPase score,MCP score,PRO score,Penton score,number_of_hits,ITRs
+AalE_tig00021708-10-192480,AalE_VPH_1,AalE,19261,34.3%,linear,,,,,,~300 bp ITR with few MMs
+Aved_tig00056523-10-134420,Aved_VPH_1,Aved,13224,29.2%,linear,297.7,446.9,207,303.9,4,
+Aved_tig00303955-10-54120,Aved_VPH_2,Aved,5422,28.0%,linear,247,,171.5,232.3,3,
+Damh_tig00014446-10-220150,Damh_VPH_1,Damh,22136,25.8%,linear,276.9,524.1,158.6,341.2,4,
+Damh_tig00018526-10-141480,Damh_VPH_2,Damh,14172,29.1%,linear,282.8,482.7,199.1,252.8,4,167 ITR with 11 MMs
+Damh_tig00046628-10-92530,Damh_VPH_3,Damh,9303,24.7%,linear,126.6,395.3,156.6,168.9,4,
+Fred_tig00051270-10-161640,Fred_VPH_1,Fred,16169,40.9%,linear,,317,167.5,95.8,3,
+Fred_tig00089364-10-137080,Fred_VPH_2,Fred,13777,29.2%,linear,254.8,490.7,194,261.4,4,
+Hade_tig00086668-10-71420,Hade_VPH_1,Hade,6926,26.7%,linear,,458.8,86.5,339.6,3,
+Lyne_tig00028020-10-249450,Lyne_VPH_1,Lyne,24834,30.5%,linear,247,145.3,154.5,348.3,4,
+Lyne_tig00033829-10-240680,Lyne_VPH_2,Lyne,24124,27.9%,linear,278.4,521.1,160.2,341,4,
+Lyne_tig00044463-10-176290,Lyne_VPH_3,Lyne,17823,26.3%,linear,274.7,274.7,163.3,258,4,
+Skiv_tig00138093-10-67990,Skiv_VPH_1,Skiv,6611,25.7%,linear,124.2,,55.7,88.8,3,
+Vibo_tig00073545-10-42870,Vibo_VPH_1,Vibo,4311,61.3%,linear,136.7,322.1,,131.3,3,
+Viby_tig00043866-10-124870,Viby_VPH_1,Viby,12497,30.5%,linear,302.1,95.4,,350.1,3,

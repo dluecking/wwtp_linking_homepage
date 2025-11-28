@@ -15,8 +15,6 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-    copy-files:
-      - cluster_plots
 
 execute:
   freeze: auto
@@ -24,3 +22,5 @@ execute:
 pre-render:
   - generate_options.R
 
+resources:
+  - cluster_plots

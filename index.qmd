@@ -21,10 +21,10 @@ denmark_geojson <- readLines("data/denmark-detailed-boundary_896.geojson") %>% p
 
 
 # read vph data -----------------------------------------------------------
-vph_df <- fread("data/vph_data.csv")
+vph_df <- fread("data/vph_df.csv")
 
 # read plv data -----------------------------------------------------------
-plv_df <- fread("data/plv_data.csv")
+plv_df <- fread("data/plv_df.csv")
 
 # read gv_df --------------------------------------------------------------
 
@@ -146,7 +146,7 @@ document.getElementById('plotSelector').addEventListener('change', function() {
         frame.src = "";
     } else {
         frame.style.display = "block";
-        frame.src = "./cluster_plots/" + selected;
+        frame.src = "cluster_plots/" + selected;
     }
 });
 </script>
