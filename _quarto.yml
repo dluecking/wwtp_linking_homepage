@@ -15,6 +15,12 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    copy-files:
+      - cluster_plots
 
+execute:
+  freeze: auto
 
+pre-render:
+  - generate_options.R
 

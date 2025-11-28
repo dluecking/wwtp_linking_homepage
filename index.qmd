@@ -127,6 +127,7 @@ Select a NCV/VPH/PLV-centered network cluster from the menu below to explore the
 <label for="plotSelector"><strong>Select cluster plot:</strong></label>
 <select id="plotSelector">
   <option value="">-- choose a plot --</option>
+  # <option value="Fred_8_interactive.html">Fred_8_interactive.html</option>
   {{< include options.html >}}
 </select>
 
@@ -145,7 +146,7 @@ document.getElementById('plotSelector').addEventListener('change', function() {
         frame.src = "";
     } else {
         frame.style.display = "block";
-        frame.src = "cluster_plots/" + selected;
+        frame.src = "./cluster_plots/" + selected;
     }
 });
 </script>
