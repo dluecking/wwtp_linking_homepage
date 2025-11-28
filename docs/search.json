@@ -18,7 +18,7 @@
     "href": "index.html#network-clusters",
     "title": "A multilayered network reveals the centrality of newly discovered Nucleocytoviricota in wastewater treatment plant communities",
     "section": "Network Clusters",
-    "text": "Network Clusters\nSelect a NCV/VPH/PLV-centered network cluster from the menu below to explore the data interactively.\nSelect cluster plot:  – choose a plot – # Fred_8_interactive.html AalW_PLV_1 Aved_NCV-As_1 Aved_VPH_2 Bjer_NCV-As_1 Bjer_NCV-Pi_1 Bjer_NCV-As_3 Bjer_PLV_1 Damh_NCV-As_1 Damh_NCV-As_2 Damh_NCV-As_3 Damh_VPH_1 Damh_VPH_2 Damh_VPH_3 EsbE_NCV-Pi_1 EsbW_NCV-Pi_1 Fred_NCV-Pa_1 Fred_NCV-Pa_2 Fred_NCV-Im_2 Fred_NCV-Pa_3 Fred_NCV-Im_4 Fred_NCV-Im_5 Fred_VPH_2 Hade_NCV-Pi_1 Hade_NCV-Im_6 Hade_VPH_1 Hirt_NCV-Im_1 Hjor_NCV-Pi_1 Hjor_NCV-Im_2 Hjor_NCV-Pi_2 Lyne_NCV-Im_1 Lyne_NCV-Im_2 Lyne_NCV-Im_3 Lyne_NCV-un_1 Lyne_NCV-Im_4 Lyne_NCV-un_3 Lyne_VPH_2 Lyne_VPH_3 Lyne_PLV_1 Mari_NCV-Pi_1 Mari_NCV-As_1 Mari_PLV_1 OdNE_NCV-Im_1 OdNW_NCV-Pi_1 OdNW_NCV-Pi_2 OdNW_NCV-Pa_1 OdNW_NCV-Pa_2 Rand_NCV-Im_1 Rand_NCV-Im_2 Rand_PLV_1 Ribe_PLV_1 Skiv_NCV-As_1 Skiv_NCV-Im_1 Skiv_NCV-Im_2 Vibo_NCV-As_1 Vibo_PLV_1 Viby_NCV-Im_1"
+    "text": "Network Clusters\nSelect a NCV/VPH/PLV-centered network cluster from the menu below to explore the data interactively. For detailed methods please refer to the method section of the corresponding publication.\nSelect cluster plot:  – choose a plot – AalW_PLV_1 Aved_NCV-As_1 Aved_VPH_2 Bjer_NCV-As_1 Bjer_NCV-Pi_1 Bjer_NCV-As_3 Bjer_PLV_1 Damh_NCV-As_1 Damh_NCV-As_2 Damh_NCV-As_3 Damh_VPH_1 Damh_VPH_2 Damh_VPH_3 EsbE_NCV-Pi_1 EsbW_NCV-Pi_1 Fred_NCV-Pa_1 Fred_NCV-Pa_2 Fred_NCV-Im_2 Fred_NCV-Pa_3 Fred_NCV-Im_4 Fred_NCV-Im_5 Fred_VPH_2 Hade_NCV-Pi_1 Hade_NCV-Im_6 Hade_VPH_1 Hirt_NCV-Im_1 Hjor_NCV-Pi_1 Hjor_NCV-Im_2 Hjor_NCV-Pi_2 Lyne_NCV-Im_1 Lyne_NCV-Im_2 Lyne_NCV-Im_3 Lyne_NCV-un_1 Lyne_NCV-Im_4 Lyne_NCV-un_3 Lyne_VPH_2 Lyne_VPH_3 Lyne_PLV_1 Mari_NCV-Pi_1 Mari_NCV-As_1 Mari_PLV_1 OdNE_NCV-Im_1 OdNW_NCV-Pi_1 OdNW_NCV-Pi_2 OdNW_NCV-Pa_1 OdNW_NCV-Pa_2 Rand_NCV-Im_1 Rand_NCV-Im_2 Rand_PLV_1 Ribe_PLV_1 Skiv_NCV-As_1 Skiv_NCV-Im_1 Skiv_NCV-Im_2 Vibo_NCV-As_1 Vibo_PLV_1 Viby_NCV-Im_1\n\n\n\n\n\n\nFigure Description: Interactive network cluster visualization showing connections among NCV, VPH, PLV and microbial (MC) contigs, with node metadata available via hover. Each subplot depicts a layer (if available) of the multi-layered network.  Layer descriptions:\nGene Sharing: all-vs-all BLASTp; ≥80% identity & coverage; undirected; microbial contigs kept only if linked to NCV/VPH/PLV.\nCRISPR: CRISPR arrays detected; spacers mapped to targets; directed; only ALL → PLV/VPH/NCVs edges.\nNon-CRISPR: PLV/VPH split into 40 bp fragments and mapped to NCVs; directed; only NCVs → PLV/VPH edges.\nCo-occurrence: four layers (ill+/ill–/ont+/ont–); Spearman correlations; contigs in &lt;5 samples removed; undirected.\nIntegration (boundary / middle): two layers; for detailed explanation please refer to the method sectio of the publication; undirected; only NCV/PLV/VPH ↔︎ ALL edges."
   },
   {
     "objectID": "index.html#reference-and-contact",
@@ -26,5 +26,12 @@
     "title": "A multilayered network reveals the centrality of newly discovered Nucleocytoviricota in wastewater treatment plant communities",
     "section": "Reference and Contact",
     "text": "Reference and Contact\nThis work has been published and can be cited under: TBA.\nEmail: dominik.luecking@univie.ac.at, bluesky: @dominikluecking.bsky.social"
+  },
+  {
+    "objectID": "index.html#ncv-table-overview",
+    "href": "index.html#ncv-table-overview",
+    "title": "A multilayered network reveals the centrality of newly discovered Nucleocytoviricota in wastewater treatment plant communities",
+    "section": "NCV table overview",
+    "text": "NCV table overview"
   }
 ]

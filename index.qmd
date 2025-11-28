@@ -122,35 +122,67 @@ leaflet() %>%
 NCVs = Nucleocytoviricota, PLV = Polinton-like viruses, VPHs = Virophages.
 
 ## Network Clusters
-Select a NCV/VPH/PLV-centered network cluster from the menu below to explore the data interactively.
+Select a NCV/VPH/PLV-centered network cluster from the menu below to explore the data interactively. For detailed methods please refer to the method section of the corresponding publication.
 
 <label for="plotSelector"><strong>Select cluster plot:</strong></label>
 <select id="plotSelector">
   <option value="">-- choose a plot --</option>
-  # <option value="Fred_8_interactive.html">Fred_8_interactive.html</option>
   {{< include options.html >}}
 </select>
 
 <!-- Hidden iframe initially -->
 <iframe id="plotFrame" 
-        style="border:0px solid #ccc; display:none; width:100%; height:600px">
+        style="border:0px solid #ccc; display:none; width:100%; height:550px">
 </iframe>
+
+<!-- Hidden figure description -->
+<div id="figureDescription" style="display:none; margin-top:2px; font-style:normal;">
+  <strong>Figure Description:</strong> Interactive network cluster visualization showing connections among NCV, VPH, PLV and microbial (MC) contigs, with node metadata available via hover. Each subplot depicts a layer (if available) of the multi-layered network.
+  <br><br>
+<strong>Layer descriptions:</strong><br>
+
+<span style="font-family: monospace;">Gene Sharing</span>: 
+all-vs-all BLASTp; ≥80% identity & coverage; undirected; microbial contigs kept only if linked to NCV/VPH/PLV.<br>
+
+<span style="font-family: monospace;">CRISPR</span>: 
+CRISPR arrays detected; spacers mapped to targets; directed; only ALL → PLV/VPH/NCVs edges.<br>
+
+<span style="font-family: monospace;">Non-CRISPR</span>: 
+PLV/VPH split into 40 bp fragments and mapped to NCVs; directed; only NCVs → PLV/VPH edges.<br>
+
+<span style="font-family: monospace;">Co-occurrence</span>: 
+four layers (ill+/ill–/ont+/ont–); Spearman correlations; contigs in <5 samples removed; undirected.<br>
+
+<span style="font-family: monospace;">Integration (boundary / middle)</span>: 
+two layers; for detailed explanation please refer to the method sectio of the publication; undirected; only NCV/PLV/VPH ↔ ALL edges.
+
+
+</div>
 
 <script>
 document.getElementById('plotSelector').addEventListener('change', function() {
     const frame = document.getElementById('plotFrame');
     const selected = this.value;
+    const desc = document.getElementById('figureDescription');
 
     if (selected === "") {
         frame.style.display = "none";
         frame.src = "";
+        desc.style.display = "none";
     } else {
         frame.style.display = "block";
         frame.src = "cluster_plots/" + selected;
+        desc.style.display = "block";
     }
 });
 </script>
 
+
+## NCV table overview
+
+<iframe src="data/ncv_table.html" 
+        style="width:150%; height:500px; border:0px solid #ccc;">
+</iframe>
 
 ## Reference and Contact
 This work has been published and can be cited under:

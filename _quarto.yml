@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "wwtp_linking_homepage"
+  title: "Dominik Lücking"
   navbar:
     left:
       - href: index.qmd
